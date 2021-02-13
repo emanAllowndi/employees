@@ -1,0 +1,94 @@
+{
+    "name": "laravel/laravel",
+    "type": "project",
+    "description": "The Laravel Framework.",
+    "keywords": [
+        "framework",
+        "laravel"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": "^7.2.5",
+        "ext-json": "*",
+        "barryvdh/laravel-dompdf": "^0.8.6",
+        "cerbero/query-filters": "^1.5",
+        "consoletvs/charts": "6.*",
+        "dompdf/dompdf": "^0.8.5",
+        "elibyy/tcpdf-laravel": "^7.0",
+        "fideloper/proxy": "^4.2",
+        "fruitcake/laravel-cors": "^1.0",
+        "highideas/laravel-users-online": "^3.0",
+        "intervention/image": "^2.5",
+        "langnonymous/lang": "dev-master",
+        "laravel/framework": "^7.0",
+        "laravel/tinker": "^2.0",
+        "laravel/ui": "^2.1",
+        "laravelcollective/html": "^6.0",
+        "laraveldaily/laravel-invoices": "^1.3",
+        "mpdf/mpdf": "^8.0",
+        "munafio/chatify": "^1.0",
+        "nagy/laravel-rating": "1.4",
+        "owen-it/laravel-auditing": "^10.0",
+        "phpanonymous/it": "^1.4",
+        "phpoffice/phpspreadsheet": "^1.14",
+        "santigarcor/laratrust": "^6.1",
+        "spatie/laravel-activitylog": "^3.16",
+        "spatie/laravel-backup": "^6.11",
+        "yajra/laravel-datatables-buttons": "^4.9",
+        "yajra/laravel-datatables-editor": "^1.21",
+        "yajra/laravel-datatables-fractal": "^1.6",
+        "yajra/laravel-datatables-html": "^4.30",
+        "yajra/laravel-datatables-oracle": "^9.10"
+    },
+    "require-dev": {
+        "facade/ignition": "^2.0",
+        "fzaninotto/faker": "^1.9.1",
+        "mockery/mockery": "^1.3.1",
+        "nunomaduro/collision": "^4.1",
+        "phpunit/phpunit": "^8.5"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": []
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        },
+        "classmap": [
+            "database/seeds",
+            "database/factories"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover --ansi"
+        ],
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "@php artisan key:generate --ansi"
+        ]
+    },
+    "repositories": {
+        "packagist.org": {
+          "type": "composer",
+          "url": "https://packagist.org"
+        }
+      }
+}
